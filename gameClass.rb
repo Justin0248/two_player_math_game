@@ -18,6 +18,8 @@ attr_accessor :question, :winner, :player1, :player2, :count
         prompt()
         puts "p1: #{player1.life}/3 vs p2: #{player2.life}/3"
     end
+    puts "#{@player.name} wins with a score of #{@player.life}/3"
+    puts "---------- Game over ----------"
 end
     def prompt()
         first = rand(0..20)
@@ -26,11 +28,13 @@ end
     puts "What does #{first} plus #{second} equal? #{answer}"
     playerAnswer = gets.chomp.to_i
     if (playerAnswer != answer)
-        puts "#{player}: Wrong answer"
+        puts "#{@player.name}: Wrong answer"
+        puts "---------- New turn ----------"
         @player.life -= 1
         swapPlayer()
     else
-        puts "#{player}: Nice job"
+        puts "#{@player.name}: Nice job"
+        puts "---------- New turn ----------"
         swapPlayer()
     end
 end
