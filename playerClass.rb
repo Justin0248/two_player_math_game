@@ -5,7 +5,4 @@ attr_accessor :name, :score, :life
         @life = 3
     end
 
-    # def lose=(lose)
-    # @life -= lose
-    # end
 end
